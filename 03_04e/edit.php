@@ -6,7 +6,11 @@ function update_record($mysqli)
 	$bio = filter_var($bio, FILTER_SANITIZE_ADD_SLASHES);
 	$desc = filter_var($_POST['desc'], FILTER_SANITIZE_ADD_SLASHES);
 
-	$query = "UPDATE speakers SET name='$name', bio='$bio',	session_name='$session_name', session_desc='$desc' WHERE name='$name';";
+	$query = "UPDATE speakers SET name='$name', 
+	bio='$bio',	
+	session_name='$session_name', 
+	session_desc='$desc' 
+	WHERE name='$name';";
 
 	return $mysqli->query($query);
 }

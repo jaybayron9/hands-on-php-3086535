@@ -20,7 +20,19 @@
 		$pass,
 		$db
 	);
-	
+
+	if (isset($_GET['name'])) {
+		$name = $_GET['name'];
+		$query = $mysqli->query("DELETE FROM speakers WHERE name = '$name'");
+
+		if ($query) {
+			echo '<h1>' . $name . ' success fully deleted!.</h1>';
+		} else {
+			echo
+			'<h1>There was an issue.</h1>';
+		}
+	}
+
 	?>
 	<p><a href="index.php">Go Back</a></p>
 </body>
